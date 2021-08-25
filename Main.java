@@ -1,31 +1,28 @@
 import java.util.Scanner;
- class Largest{
-    public void intMax(int... num){
-      int max=0;
-      for (int i: num)
-      {
-          if(i>max)
-          max=i;
-      }
-      System.out.println(max +"largest");
-}
-public void floatMax(float... num){
-    float max=0;
-    for (float i: num)
-    {
-        if(i>max)
-        max=i;
-    }
-    System.out.println(max +"largest");
+ class Largest<T>{
+    public static <T extends Comparable<T>> void findLargest(T x, T y, T z) {
+        T max = x; // assume x is initially the largest
+    
+        if (y.compareTo(max) > 0)
+          max = y; // y is the largest so far
+    
+        if (z.compareTo(max) > 0)
+          max = z; // z is the largest
+    
+        System.out.println("largest is "+max);//largest object
+
+      } 
 }
 
-}
+
+
 
 public class Main{
     public static void main(String args[]){
         
         Largest l1=new Largest();
-        l1.intMax(1,2,3,20,7);
+        l1.findLargest(1,2,3);
+        l1.findLargest("touhid","pasha", "hello");
 
  }
 }
