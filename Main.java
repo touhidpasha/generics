@@ -31,12 +31,30 @@ public void floatMax(Double a,Double b,Double c){
   System.out.println(c+ " is largest");
 }
 
+public void stringMax(String a,String b,String c){
+    if(a.compareTo(b)>1){
+    
+
+      if(a.compareTo(c)>1)
+     System.out.println(a +" largest");
+     else
+     System.out.println(c+" is largest");
+    
+  }
+  else if(b.compareTo(c)>1)
+  System.out.println(b+" is largest");
+  else 
+  System.out.println(c+ " is largest");
+}
+
+
 }
 
 public class Main{
     public static void main(String args[]){
         
         Largest l1=new Largest();
-        l1.floatMax(1.3, 3.6, 3.2);
+        l1.stringMax("touhid","pasha","hello");
+
  }
 }
